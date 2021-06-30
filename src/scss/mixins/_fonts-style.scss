@@ -1,0 +1,50 @@
+@mixin start-style {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+@mixin text-style {
+    font-size: calc(1.4rem + 1vw);
+    line-height: 3.7rem;
+    text-shadow: #000 1px 1px 0, #000 -1px -1px 0, #000 -1px 1px 0, #000 1px -1px 0;
+}
+@mixin title-big-style {
+    font-size: calc(1.4rem + 4vw);
+    line-height: 6rem;
+    font-weight: 600;
+    text-shadow: #fff -1px -1px 0, #000 1px 1px 0;
+    text-align: center;
+}
+@mixin title-section {
+    font-size: 4.2rem;
+    line-height: 6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+@mixin title-artical {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+@mixin subtitle-artical {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 3rem;
+    text-align: center;
+    color: $turquoise;
+    &:focus {
+        @include operator-subtitle-visible;
+    }
+    @include desktop {
+        &:hover {
+            @include operator-subtitle-visible;
+        }
+    }
+}
+@mixin link-button-style {
+    font-size: calc(1.4rem + 2vw);
+    font-weight: 600;
+    box-shadow: 0.4rem 0.4rem 0.8rem 0 rgba(34, 60, 80, 0.2);
+    text-shadow: #fff -1px -1px 0, #000 1px 1px 0;
+}

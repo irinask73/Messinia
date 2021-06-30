@@ -1,0 +1,62 @@
+//header{
+@mixin menu-visible {
+    opacity: 1;
+    transform: scale(1.2);
+    &::before {
+        transform: scaleX(1);
+        transform-origin: center;
+    }
+}
+//service
+@mixin service-item-focus-visible {
+    .icon__service {
+        fill: $link-hover;
+    }
+    .service__item-icons {
+        border: 0.3rem solid $link-hover;
+    }
+    .service__item-link {
+        background-color: $link-hover;
+    }
+}
+//explore
+@mixin explore-item-img-visible {
+    opacity: 0.9;
+    filter: drop-shadow(0.2rem 0.4rem 0.6rem black);
+    transform: scale(0.9);
+}
+//operator
+@mixin operator-img-visible {
+    border-radius: 0.4rem;
+    height: 20rem;
+    max-width: 50rem;
+    width: 100%;
+}
+@mixin operator-subtitle-visible {
+    text-transform: uppercase;
+    color: $link-hover;
+}
+@mixin operator-link-button-visible {
+    transform: scale(1.2);
+    background-color: $link-hover;
+}
+//multidays
+@mixin multiday-link-visible {
+    color: $link-hover;
+    font-size: 2rem;
+}
+//footer
+@mixin futer-icon-visible {
+    .icon__social.facebook {
+        background-color: $bg-facebook;
+        border-color: $bg-facebook;
+    }
+    .icon__social.twitter {
+        background-color: $bg-twitter;
+        border-color: $bg-twitter;
+    }
+    .icon__social.pinterest {
+        background-color: $bg-pinterest;
+        border-color: $bg-pinterest;
+    }
+}

@@ -1,0 +1,32 @@
+.service {
+    &__items {
+        @include flex-all-sb;
+        flex-wrap: wrap;
+        margin: 8rem 0 3rem;
+    }
+    &__item {
+        @include service-item;
+        &:focus-within {
+            transform: scale(1.2);
+            @include service-item-focus-visible;
+        }
+        @include desktop {
+            &:hover {
+                transform: scale(1.2);
+                .icon__service {
+                    fill: $link-hover;
+                }
+                .service__item-icons {
+                    border: 0.3rem solid $link-hover;
+                }
+                .service__item-link {
+                    background-color: $link-hover;
+                }
+            }
+        }
+    }
+}
+.icon__service {
+    @include icon-center;
+    fill: $turquoise;
+}

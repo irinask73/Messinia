@@ -1,0 +1,54 @@
+@mixin multiday-artical {
+    @include flex-v-center;
+    @include flex-col;
+    background-color: $bg-footer;
+    color: #fff;
+    padding: 2rem;
+    flex-basis: 100%;
+    margin-bottom: 5rem;
+    box-shadow: 0.8rem 0.8rem 0.8rem -0.6rem rgba(34, 60, 80, 0.35);
+    &-img {
+        width: 100%;
+        aspect-ratio: auto;
+        filter: drop-shadow(black 0.2rem 0.4rem 0.6rem);
+    }
+    &-title {
+        height: 8rem;
+        @include subtitle-artical;
+        @include flex-v-center;
+        margin-bottom: 2rem;
+        text-shadow: #fff -1px -1px 0, #000 1px 1px 0;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+        &:focus {
+            color: #fff;
+        }
+        @include desktop {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    &-info {
+        width: 100%;
+        @include flex-all-sb;
+        margin-top: 2rem;
+    }
+    &-text {
+        font-weight: 600;
+    }
+    &-link {
+        background-color: #fff;
+        color: $turquoise;
+        font-weight: 600;
+        filter: drop-shadow(0.2rem 0.2rem 0.2rem black);
+        &:focus {
+            @include multiday-link-visible;
+        }
+        @include desktop {
+            &:hover {
+                @include multiday-link-visible;
+            }
+        }
+    }
+}

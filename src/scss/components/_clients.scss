@@ -1,0 +1,51 @@
+.clients {
+    @include section-padding;
+    &__title {
+        @include title-section;
+        margin-bottom: 3rem;
+    }
+    &__slider {
+        padding-bottom: 4rem;
+        &.swiper-container{
+            width: 100%;
+        }
+    }
+    &__text {
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        color: black;
+    }
+    &__info{
+        @include flex-all-sb;
+        width: 80%;
+        margin: auto;
+    }
+    &__name {
+        @include title-artical;
+    }
+    &__btn{
+        padding: 1.6rem 0;
+        color: inherit;
+        @include flex-all-center;
+    }
+    &__icon{
+        margin-left: 0.5rem;
+    }
+    &__pagination {
+        & .swiper-pagination-bullet-active {
+            background: $link-hover;
+        }
+    }
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 0.8rem;
+    padding: 1.5rem;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 0;
+}

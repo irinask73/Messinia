@@ -1,0 +1,1 @@
+var  Mixer  =  mixitup ( '.explore__container' ) ;

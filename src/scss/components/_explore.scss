@@ -1,0 +1,67 @@
+.explore {
+    @include section-padding;
+    background-color: $light-gray;
+    &__title {
+        @include title-section;
+    }
+    &__btn {
+        text-align: center;
+        button {
+            @include explore-button;
+            width: 100%;
+            @include desktop {
+                &:hover,
+                &:focus {
+                    background-color: $red;
+                }
+            }
+            &.focus-visible {
+                background-color: $red;
+            }
+        }
+    }
+    &__container {
+        margin: 3rem 0;
+        @include flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        @include explore-item;
+    }
+}
+
+.icon__explore {
+    fill: black;
+    position: absolute;
+    @include center;
+}
+
+.icon__explore-link {
+    fill: white;
+    margin-top: 0.5rem;
+}
+
+.explore__link {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    @include flex-col-center;
+    &-btn {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border-radius: inherit;
+    }
+}
+.favorite {
+    background-color: $red;
+}
+.map {
+    background-color: $yellow;
+}
+.navigation {
+    background-color: $turquoise;
+}
+.phone {
+    background-color: $olive;
+}

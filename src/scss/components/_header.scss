@@ -1,0 +1,80 @@
+//
+.header {
+  h1 {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  position: relative;
+  @include start-style;
+  &__inner {
+    height: 10rem;
+    @include flex-all-sb;
+  }
+  &__menu {
+    position: absolute;
+    @include center;
+    opacity: 0;
+  }
+}
+.burger {
+  @include burger;
+}
+.menu__list {
+  font-size: calc(0.5rem + 2vw);
+  color: $link-hover;
+  li {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    @include desktop {
+      &:hover {
+        cursor: pointer;
+        .menu__link {
+          opacity: 1;
+          transform: scale(1.2);
+          &::before {
+            transform: scaleX(1);
+            transform-origin: center;
+          }
+        }
+      }
+    }
+  }
+}
+.menu__link {
+  outline: none;
+  padding-bottom: 0.3rem;
+  color: $turquoise;
+  opacity: 0.8;
+  transition: all 1s cubic-bezier(0.3, 0.1, 0.3, 1);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: currentColor;
+    height: 0.1rem;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.3, 0.1, 0.3, 1);
+  }
+  &.focus-visible{
+    @include menu-visible;
+  }
+}
+.bg--active {
+  height: 100vh;
+  background-color: $bg;
+}
+.header__menu.menu--active {
+  opacity: 1;
+}
+
+.header--scroll{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: #fff;
+}

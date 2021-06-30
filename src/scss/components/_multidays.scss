@@ -1,0 +1,15 @@
+.multiday{
+    background-color: $light-gray;
+    @include section-padding;
+    &__title{
+        @include title-section;
+    }
+    &__items{
+        @include flex-all-sb;
+        flex-wrap: wrap;
+    }
+    &__item{
+        @include multiday-artical;
+    }
+}
+

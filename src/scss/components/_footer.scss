@@ -1,0 +1,94 @@
+.footer {
+    background-color: $bg-footer;
+    @include start-style;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        color: #fff;
+        padding: 2rem;
+        a {
+            color: #fff;
+        }
+    }
+    &__col {
+        flex-basis: 100%;
+        margin-bottom: 3rem;
+        text-align: center;
+        &-title {
+            font-size: 1.2em;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            border-bottom: 0.1rem solid white;
+        }
+        &-links {
+            @include flex;
+            @include flex-col;
+            margin-left: 2rem;
+        }
+    }
+    &__contacts {
+        &-link {
+            font-size: 0.85em;
+            display: block;
+            & a {
+                @include mobile{
+                  padding: 0.5rem 0;  
+                }              
+            }
+        }
+    }
+    .menu__link {
+        &::before {
+            color: #fff;
+        }
+        @include desktop {
+            &:hover {
+                opacity: 1;
+                transform: scale(1.2);
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: center;
+                }
+            }
+        }
+    }
+}
+.follow {
+    @include flex-all-center;
+    margin-top: 10px;
+    & > li {
+        margin-right: 2rem;
+    }
+    &__link {
+        outline: none;
+        &.focus-visible {
+            @include futer-icon-visible;
+        }
+    }
+}
+//icons
+.icon__contacts {
+    fill: white;
+    margin-right: 0.5rem;
+}
+.icon__social {
+    fill: white;
+    @include icon-footer;
+    @include desktop {
+        &:hover {
+            &.facebook {
+                background-color: $bg-facebook;
+                border-color: $bg-facebook;
+            }
+            &.twitter {
+                background-color: $bg-twitter;
+                border-color: $bg-twitter;
+            }
+            &.pinterest {
+                background-color: $bg-pinterest;
+                border-color: $bg-pinterest;
+            }
+        }
+    }
+}

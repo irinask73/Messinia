@@ -1,0 +1,32 @@
+@mixin service-item {
+    flex-basis: 100%;
+    max-width: 85vw;
+    width: 100%;
+    margin: 0 auto 5rem;
+    padding: 2rem;
+    @include flex-v-center;
+    @include flex-col;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.2rem 5rem 0 rgba(0, 0, 0, 0.07);
+    transition: transform 1s cubic-bezier(0.3, 0.1, 0.3, 1);
+    //cursor: pointer;
+    &-icons {
+        @include icons-service;
+        margin-bottom: 5rem;
+    }
+    &-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &-text {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &-link {
+        background-color: $turquoise;
+    }
+    a {
+        color: #fff;
+    }
+}

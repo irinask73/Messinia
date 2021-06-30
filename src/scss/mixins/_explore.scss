@@ -1,0 +1,101 @@
+//components
+@mixin explore-button {
+    padding: 1rem 1.5rem;
+    background-color: $olive;
+    color: #fff;
+    font-weight: 600;
+}
+
+@mixin explore-category {
+    position: relative;
+    order: 2;
+    align-self: flex-start;
+    margin: 2rem 0 2rem 3rem;
+    padding: 0.5rem 0.5rem 0.5rem 3.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 600;
+    background-color: $olive;
+    border-radius: 0.4rem;
+    filter: drop-shadow(0.1rem 0.2rem 0.2rem black);
+}
+
+//explore__link
+@mixin explore-link {
+    @include flex-all-sa;
+    flex-wrap: wrap;
+    li {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 1rem;
+        filter: drop-shadow(0.2rem 0.2rem 0.2rem black);
+        transition: 0.3s ease-in-out;
+        margin-bottom: 2rem;
+        &:focus-within {
+            transform: scale(1.2);
+        }
+        @include desktop{
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+@mixin explore-item {
+    margin-bottom: 3rem;
+    flex-basis: 100%;
+    @include flex;
+    @include flex-col;
+    background-color: #fff;
+    transition: all 0.5s;
+    box-shadow: 0.8rem 0.8rem 0.8rem -0.6rem rgba(34, 60, 80, 0.35);
+    &-title {
+        @include title-artical;
+        order: 3;
+    }
+    &-img {
+        min-height: 31.4rem;
+        order: 1;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        & img{
+            width: 100%;
+            height: 31.4rem;
+            object-fit: cover;
+        }
+        &:focus {
+            @include explore-item-img-visible;
+        }
+        @include desktop {
+            &:hover {
+                @include explore-item-img-visible;
+            }
+        }
+    }
+    &-category {
+        @include explore-category;
+        .category__icon {
+            position: absolute;
+            width: 3.4rem;
+            height: 3.4rem;
+            border-radius: 50%;
+            background-color: white;
+            @include center;
+            left: 0;
+        }
+    }
+    &-content {
+        order: 4;
+        padding: 0 1.5rem 2rem;
+    }
+    &-text {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        height: 15rem;
+    }
+    &-link {
+        @include explore-link;
+    }
+}
