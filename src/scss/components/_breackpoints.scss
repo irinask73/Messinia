@@ -42,6 +42,7 @@
     }
     .menu__list {
         @include flex-all-sb;
+        font-size: calc(0.5rem + 2vw);
         li{
             margin-bottom: 0;
         }

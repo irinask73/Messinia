@@ -9,7 +9,7 @@
     color: #fff;
     &-wrapper {
       height: calc(100% - 10vh);
-      @include flex-all-sa;
+      @include flex-all-sb;
       @include flex-col;
       padding: 5vh 0;
     }
@@ -18,9 +18,11 @@
     }
     &-text {
       display: none;
-      max-width: 40vw;
+      max-width: 50vw;
       width: 100%;
       @include text-style;
+      line-height: 5rem;
+      font-weight: 600;
       text-align: center;
     }
     &-link {
@@ -30,7 +32,7 @@
       border-radius: 4px;
       @include link-button-style;
       transition: all 1s cubic-bezier(0.3, 0.1, 0.3, 1);
-      &:hover{
+      &:hover {
         background-color: $link-hover;
       }
     }
@@ -40,8 +42,7 @@
 .swiper-button-prev {
   color: white;
   transition: all 1s cubic-bezier(0.3, 0.1, 0.3, 1);
-  &:hover{
-    color: $link-hover;
+  &:hover {
     transform: scale(1.5);
   }
 }

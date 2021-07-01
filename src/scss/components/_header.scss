@@ -21,12 +21,12 @@
   @include burger;
 }
 .menu__list {
-  font-size: calc(0.5rem + 2vw);
+  font-size: calc(2rem + 2vw);
   color: $link-hover;
   li {
     display: block;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     @include desktop {
       &:hover {
         cursor: pointer;
