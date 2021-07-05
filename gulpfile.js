@@ -7,6 +7,7 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
+const svgMin = require('gulp-svgmin');
 const fileInclude = require('gulp-file-include');
 const sourcemaps = require('gulp-sourcemaps');
 const rev = require('gulp-rev');
@@ -30,9 +31,15 @@ const clean = () => {
 //svg sprite
 const svgSprites = () => {
   return src('./src/img/svg/**.svg')
+    // minify svg
+    .pipe(svgMin({
+      js2svg: {
+        pretty: true
+      }
+    }))
     .pipe(svgSprite({
       mode: {
-        stack: {
+        symbol: {
           sprite: "../sprite.svg" //sprite file name
         }
       },
@@ -54,16 +61,16 @@ const styles = () => {
 };
 
 const scripts = () => {
-	src('./src/js/vendor/**.js')
-		.pipe(concat('vendor.js'))
-		.pipe(gulpif(isProd, uglify().on("error", notify.onError())))
-		.pipe(dest('./app/js/'))
+  src('./src/js/vendor/**.js')
+    .pipe(concat('vendor.js'))
+    .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
+    .pipe(dest('./app/js/'))
   return src(
     ['./src/js/functions/**.js', './src/js/components/**.js', './src/js/main.js'])
     .pipe(gulpif(!isProd, sourcemaps.init()))
-		.pipe(babel({
-			presets: ['@babel/env']
-		}))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(concat('main.js'))
     .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
     .pipe(gulpif(!isProd, sourcemaps.write('.')))
