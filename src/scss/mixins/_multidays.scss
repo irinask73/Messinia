@@ -9,7 +9,7 @@
     box-shadow: 0.8rem 0.8rem 0.8rem -0.6rem rgba(34, 60, 80, 0.35);
     &-img {
         width: 100%;
-        aspect-ratio: auto;
+        aspect-ratio: 16/9;
         filter: drop-shadow(black 0.2rem 0.4rem 0.6rem);
     }
     &-title {
