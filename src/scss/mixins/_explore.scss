@@ -97,5 +97,8 @@
     }
     &-link {
         @include explore-link;
+        .favorite-btn{
+            margin-bottom: 0.6rem;
+        }
     }
 }
